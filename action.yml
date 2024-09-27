@@ -1,0 +1,23 @@
+name: 'spagu-label-selector'
+author: 'spagu'
+description: 'Label PR with a avalible label across the repository and organization'
+inputs:
+  lables:
+    description: 'List of the lables to be used'
+    required: true
+  webhook_avatar:
+    description: 'The discord webhook avatar'
+    required: false
+    default: 'https://avatars.githubusercontent.com/in/15368?v=4'
+  webhook_name:
+    description: 'The discord webhook name'
+    required: false
+    default: 'Github Actions'
+  github_token:
+    description: 'The github token'
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: 'node20'
+  main: 'src/index.js'
